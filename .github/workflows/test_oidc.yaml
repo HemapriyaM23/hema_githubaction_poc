@@ -21,7 +21,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-region: us-east-1
-          role-to-assume: ${{ secrets.OIDC_ROLE }}
+          role-to-assume: arn:aws:iam::767031947443:role/Hema_OIDC_Role
           role-session-name: OIDCSession
 
       - name: Checking AWS Connections
