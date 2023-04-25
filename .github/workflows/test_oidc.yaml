@@ -35,5 +35,5 @@ jobs:
       
       - name: Deploy SAM application
         run: |
-          sam build
+          # sam build
           sam deploy --stack-name hema-stack-poc --s3-bucket hematestbucket	--capabilities CAPABILITY_IAM  
