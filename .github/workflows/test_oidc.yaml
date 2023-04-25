@@ -28,3 +28,12 @@ jobs:
         run: | 
           aws s3 ls
         shell: bash
+        
+      - name: Install SAM CLI
+        run: |
+          sudo pip3 install aws-sam-cli
+      
+      - name: Deploy SAM application
+        run: |
+          sam build
+          sam deploy --stack-name hema-stack-poc --s3-bucket hematestbucket	--capabilities CAPABILITY_IAM  
