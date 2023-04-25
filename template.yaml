@@ -10,7 +10,7 @@ Resources:
       CodeUri: hema/
       Handler: lambda_function.lambda_handler
       Runtime: python3.9
-      Role: arn:aws:iam::767031947443:role/Hema_OIDC_Role
+      Role: arn:aws:iam::767031947443:role/Lambda_role
       Timeout: 900
     Metadata:
       SamResourceId: hemasam
