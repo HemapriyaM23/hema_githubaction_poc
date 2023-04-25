@@ -1,0 +1,9 @@
+version = 0.1
+[default.deploy.parameters]
+stack_name = "hema-stack-new"
+s3_bucket = "hematestbucket"
+s3_prefix = "hema-s3prefix-poc"
+region = "us-east-1"
+confirm_changeset = false
+capabilities = "CAPABILITY_NAMED_IAM"
+image_repositories = []
