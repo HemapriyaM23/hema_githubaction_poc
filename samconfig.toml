@@ -1,6 +1,6 @@
 version = 0.1
 [default.deploy.parameters]
-stack_name = "hema-stack-new"
+stack_name = "hema-stack-1"
 s3_bucket = "hematestbucket"
 s3_prefix = "hema-s3prefix-poc"
 region = "us-east-1"
