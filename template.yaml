@@ -4,13 +4,13 @@ Description: Template to Test Github Actions
   
 Resources:
 
-  helloworldlambda:
+  hemalambda:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: hello_world/
+      CodeUri: hema/
       Handler: lambda_function.lambda_handler
       Runtime: python3.9
       Role: arn:aws:iam::767031947443:role/Hema_OIDC_Role
       Timeout: 1000
     Metadata:
-      SamResourceId: helloworldsam
+      SamResourceId: hemasam
