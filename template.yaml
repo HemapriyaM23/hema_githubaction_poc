@@ -4,7 +4,7 @@ Description: Template to Test Github Actions
   
 Resources:
 
-  hello_world_lambda:
+  helloworldlambda:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: hello_world/
@@ -13,4 +13,4 @@ Resources:
       Role: arn:aws:iam::767031947443:role/Hema_OIDC_Role
       Timeout: 1000
     Metadata:
-      SamResourceId: hello_world_sam
+      SamResourceId: helloworldsam
