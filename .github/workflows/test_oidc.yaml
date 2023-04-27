@@ -32,6 +32,7 @@ jobs:
       - name: Install SAM CLI
         run: |
           sudo pip3 install aws-sam-cli
+          sh "pwd"
       
       - name: Deploy SAM application
         run: |
