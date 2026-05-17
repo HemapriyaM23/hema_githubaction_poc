@@ -45,7 +45,7 @@ on:
 
 jobs:
   call_replacement_strings:
-    uses: pfizer/sfdi-metadata-tracker-poc/.github/workflows/replacement_strings_reusable.yml@b29fc6b80daf0c26227a11d83b91458244e25d41
+    uses: HemapriyaM23/autosys-deployment/.github/workflows/replacement_strings_reusable.yml@main
     permissions:
       contents: write
       pull-requests: write
