@@ -1,0 +1,60 @@
+name: Replacement Strings PR Automation
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_branch:
+        description: Source branch to create replacement branch from
+        required: true
+        type: choice
+        options:
+          - dev
+          - test
+          - sit
+          - replacement_strings_pr
+      destination_branch:
+        description: Destination branch for pull request
+        required: true
+        type: choice
+        options:
+          - test
+          - sit
+          - main
+      mapping_input_mode:
+        description: Select mapping input mode (manual strings or GitHub variable dictionary)
+        required: true
+        default: manual
+        type: choice
+        options:
+          - manual
+          - github_variable
+      source_strings:
+        description: "Source strings (Comma separated values, mapped by position)"
+        required: false
+        type: string
+      destination_strings:
+        description: "Destination strings (Comma separated values, mapped by position)"
+        required: false
+        type: string
+      folder:
+        description: Folder where replacements are applied (relative to the root of the repository)
+        required: true
+        type: choice
+        options:
+          - snowflake
+
+jobs:
+  call_replacement_strings:
+    uses: pfizer/sfdi-metadata-tracker-poc/.github/workflows/replacement_strings_reusable.yml@b29fc6b80daf0c26227a11d83b91458244e25d41
+    permissions:
+      contents: write
+      pull-requests: write
+    with:
+      source_branch: ${{ inputs.source_branch }}
+      destination_branch: ${{ inputs.destination_branch }}
+      mapping_input_mode: ${{ inputs.mapping_input_mode }}
+      source_strings: ${{ inputs.source_strings || '' }}
+      destination_strings: ${{ inputs.destination_strings || '' }}
+      folder: ${{ inputs.folder }}
+    secrets:
+      SSH_SIGNING_KEY: ${{ secrets.SRVAMR_COMMGIT_SSH_SIGNING_KEY }}
