@@ -45,7 +45,7 @@ on:
 
 jobs:
   call_replacement_strings:
-    uses: HemapriyaM23/autosys-deployment/.github/workflows/replacement_strings_reusable.yml@main
+    uses: HemapriyaM23/autosys-deployment/.github/workflows/replacement_strings_reusable_v1.yml@main
     permissions:
       contents: write
       pull-requests: write
